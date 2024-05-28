@@ -39,9 +39,11 @@ return [
     ],
     'obfuscate' => [
         'companies' => ['name', 'street', 'zipcode', 'city', 'country', 'phone', 'fax', 'website', 'email'],
-        'user' => ['name', 'surname', 'street', 'zipcode', 'city', 'county', 'country', 'phone', 'mobile', 'fax', 'website', 'language'],
-        'login' => ['login', 'password', 'email']
+        'users' => ['name', 'surname', 'street', 'zipcode', 'city', 'county', 'country', 'phone', 'mobile', 'fax', 'website', 'language'],
+        'logins' => ['login', 'password', 'email']
     ],
-    'truncate' => [],
+    'truncate' => [
+        'payment_transactions',
+    ],
     'obsolete' => []
 ];
