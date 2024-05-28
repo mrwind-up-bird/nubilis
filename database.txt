@@ -1,0 +1,105 @@
+obfuscator demo datenbank
+
+
+3. Tablen
+
+- Login
+- Company
+- User
+- Payment Details
+- Payment Transactions
+
+
+
+Database obfuscator_demo
+
+---
+Table login - represents the login
+---
+PK	id					int					primary
+UK	login				string				unique
+	password			string
+UK	email				string				unique
+	user_id				int
+
+	created_at			datetime			on create current timestamp
+	updated_at			datetime			on update current timestamp
+
+---
+Table user - represents the user
+---
+PK	id					int					primary
+	name				string				unique
+	surname				string				unique
+	street				string
+	zipcode				string
+	city				string
+FK	company_id			int					FK company.id
+
+	phone				string
+	mobile				string
+	fax					string
+	website				string
+
+	county				string
+	country				string				(iso representation of country: DE/EN/PL)
+	language			string
+
+	created_at			datetime			on create current timestamp
+	updated_at			datetime			on update current timestamp
+
+---
+Table companies
+---
+PK	id					int					primary
+	name				string
+	street				string
+	zipcode				string
+	city				string
+	country				string				(iso representation of country: DE/EN/PL)
+
+	phone				string
+	fax					string
+	website				string
+	email				string
+
+	created_at			datetime
+	updated_at			datetime
+
+---
+Table payment
+---
+PK	id					int					primary
+	type				int					Debit, Creditcard, SEPA, Klarna, Paypal
+FK	user_id				int					FK user.id
+
+	card_number			int					Nummer der Kreditkarte
+	account_holder		string				Name auf der Karte
+	cvv					int					Checksum
+	valid_until			datetime			Ablaufdatum
+	provider			string				amex, visa, mastercard
+
+	iban				string				IBAN
+	bic					string				BIC
+	blz					string				BLZ
+	account				int					Kontonummer
+
+	created_at			datetime			on create current timestamp
+	updated_at			datetime			on update current timestamp
+
+---
+Table payment_transactions
+---
+PK	id					int					primary
+FK	user_id				int					FK user.id
+FK	payment_id			int					FK payment.id
+	type				int					Debit, Creditcard, SEPA, Klarna, Paypal
+	transaction_id		string				-> from Payment Provider
+	payment_data		json				-> all Data as actual Snapshot
+
+	created_at			datetime			on create current timestamp
+	updated_at			datetime			on update current timestamp
+
+
+
+
