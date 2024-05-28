@@ -4,18 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Services\DatabaseService;
 use App\Traits\ErrorChannelTrait;
-use Carbon\Carbon;
-use Dflydev\DotAccessData\Data;
 use http\Exception\RuntimeException;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Number;
 use Laravel\Horizon\Contracts\MasterSupervisorRepository;
-use Laravel\Horizon\Horizon;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 class ObfuscateController extends Controller

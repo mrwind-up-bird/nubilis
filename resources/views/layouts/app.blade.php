@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <h2><img src="https://www.lax-software.de/site/themes/lax/dist/images/logos/lax-logo.svg" height="50px;"> {{ config('app.name', 'Laravel') }}</h2>
+                    <h2><img src="" height="50px;"> {{ config('app.name', 'Laravel') }}</h2>
                 </a>
                 <div class="row">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">

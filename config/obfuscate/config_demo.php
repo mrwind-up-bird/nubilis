@@ -1,22 +1,22 @@
 <?php
-// this is a sample configuration
+// this is a configuration file for demonstration purpose
 return [
     'project' => [
-        'projectName' => 'Admin',
-        'configFile' => 'admin',
+        'projectName' => 'Demo',
+        'configFile' => 'sample',
     ],
     'dumpFile' => [
-        'inputFile' => 'lax_laxadmin_20240429.sql',
-        'outputFile' => null,
+        'inputFile' => 'demo_input',                // without file extension
+        'outputFile' => 'demo_output',              // without file extension
         'outputFormat' => \App\Services\DatabaseService::OUTPUT_SQL
     ],
     'database' => [
         'source' => [
             'dbHost' => 'host.docker.internal',
             'dbPort' => '3306',
-            'dbName' => 'lax_admin',
+            'dbName' => 'demo',
             'dbUser' => 'root',
-            'dbPass' => 'laxgmbh123',
+            'dbPass' => '12345',
             'options' => [
                 PDO::ATTR_EMULATE_PREPARES => true,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -26,9 +26,9 @@ return [
         'target' => [
             'dbHost' => 'host.docker.internal',
             'dbPort' => '3306',
-            'dbName' => 'obf_lax_admin',
+            'dbName' => 'obf_demo',
             'dbUser' => 'root',
-            'dbPass' => 'laxgmbh123',
+            'dbPass' => '12345',
             'options' => [
                 PDO::ATTR_EMULATE_PREPARES => true,
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -38,12 +38,9 @@ return [
         ]
     ],
     'obfuscate' => [
-        'critical_info_mailing_sent' => ['email:email'],
-        'tadminlogin' => ['cName','cRealname','cMail:email'],
-        'tkunde' => ['cVorname','cNachname','cFirma','cMail:email','cDomain'],
-        'tlizenzbestellung' => ['cVorname','cNachname','cFirma','cStrasse','cPLZ','cOrt','cMail:email','cTel','cFax','cUstID:ustd'],
-        'tnewsletter' => ['cMail:email'],
-        #'*' => ['cVorname','cNachname','cFirma','cStrasse','cPLZ','cOrt','cMail:email','cTel','cFax','cUstID:ustd','cDomain','cRealname','cName'],
+        'companies' => ['name', 'street', 'zipcode', 'city', 'country', 'phone', 'fax', 'website', 'email'],
+        'user' => ['name', 'surname', 'street', 'zipcode', 'city', 'county', 'country', 'phone', 'mobile', 'fax', 'website', 'language'],
+        'login' => ['login', 'password', 'email']
     ],
     'truncate' => [],
     'obsolete' => []

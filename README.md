@@ -1,7 +1,6 @@
 ## Data Obfuscator for sensitive personal information
 The aim of this application is to obfuscate customer-related data such as IBAN, BIC, name and address.
-The data is read from a MySQL table (source), compared with a configuration to determine which fields are to be obfuscated
-and written back into a MySQL database (target).
+The data is read from a MySQL table (source) or a SQL File as source, compared with a configuration to determine which fields are to be obfuscated and written back into a MySQL database (target).
 
 ## Installation
 The application is designed as a Docker container. If necessary, a few adjustments must be made in the docker-compose
