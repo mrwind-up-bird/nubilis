@@ -39,10 +39,10 @@ class ObfuscateController extends Controller
     {
         return view('obfuscate.index')
             ->with('dumpDirectoryFiles', array_filter($this->getDirectoryContent(), function($f) {
-                return !(str_starts_with($f->getFilename(), DatabaseService::OUTPUT_DUMP_PREFIX));
+                return !(str_contains($f->getFilename(), DatabaseService::OUTPUT_DUMP_PREFIX));
             }))
             ->with('outputDirectoryFiles', array_filter($this->getDirectoryContent(), function($f) {
-                return (str_starts_with($f->getFilename(), DatabaseService::OUTPUT_DUMP_PREFIX));
+                return (str_contains($f->getFilename(), DatabaseService::OUTPUT_DUMP_PREFIX));
             }))
             ->with('configDirectoryFiles', $this->getDirectoryContent(DatabaseService::DIRECTORY_TYPE_CONFIGS))
             ->with('currentFile', $this->configFile);
@@ -90,10 +90,9 @@ class ObfuscateController extends Controller
      */
     public function dumps()
     {
-
         return view('obfuscate.dumps')->with('currentFileName', false)
             ->with('dumpDirectoryFiles', array_filter($this->getDirectoryContent(), function($f) {
-            return (str_starts_with($f->getFilename(), DatabaseService::OUTPUT_DUMP_PREFIX));
+            return (str_contains($f->getFilename(), DatabaseService::OUTPUT_DUMP_PREFIX));
         }));
     }
 
