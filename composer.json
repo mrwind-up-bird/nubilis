@@ -11,6 +11,7 @@
         "ext-pdo": "*",
         "ext-posix": "*",
         "ext-redis": "*",
+        "ext-http": "*",
         "guzzlehttp/guzzle": "^7.2",
         "illuminate/queue": "*",
         "laravel/framework": "^10.10",
@@ -19,8 +20,7 @@
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.5",
         "predis/predis": "^2.2",
-        "spatie/laravel-medialibrary": "^11.5",
-      "ext-http": "*"
+        "spatie/laravel-medialibrary": "^11.5"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
