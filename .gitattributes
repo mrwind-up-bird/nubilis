@@ -6,7 +6,7 @@
 *.md diff=markdown
 *.php diff=php
 
-database/scripts/mysql_tuner.pl linguist-vendored=false
+*.pl linguist-vendored=false
 
 /.github export-ignore
 CHANGELOG.md export-ignore

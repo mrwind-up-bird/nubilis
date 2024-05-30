@@ -11,7 +11,6 @@
         "ext-pdo": "*",
         "ext-posix": "*",
         "ext-redis": "*",
-        "ext-http": "*",
         "guzzlehttp/guzzle": "^7.2",
         "illuminate/queue": "*",
         "laravel/framework": "^10.10",
